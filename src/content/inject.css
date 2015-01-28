@@ -1,0 +1,39 @@
+/**
+ * Place your custom CSS styles here.
+ **/
+
+
+html body img.d_simg_hidden{
+	content:'' !important;
+	border-radius: 0px !important;
+}
+
+html body img.d_simg_hidden2{
+	border-radius: 0px !important;
+	opacity: 0.5;
+}
+
+
+html body img.d_simg_hidden:after {
+	font-size: 80%;
+	max-width: 200px;
+	max-height: 20px;
+	content:"Watched before 2-3 mins";
+	padding: 6px;
+	background: red;
+	color: #fff;
+
+    position:absolute !important;
+    top: 50%;
+    left: 50%;
+    margin-left: -25%;
+    pointer-events: none;
+    -webkit-transform: translatez(0);
+    border-radius: 4px !important;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+html body img.d_simg_hidden_after:after {
+	display: none !important;
+}

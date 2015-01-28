@@ -1,0 +1,63 @@
+{
+  "name": "Hide seen images",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "This extension was created with the awesome extensionizr.com",
+  "homepage_url": "http://extensionizr.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "js/underscore.js",
+      "js/moment.js",
+      "src/bg/bgCommunicator.js",
+      "src/bg/background.js"
+    ],
+    "persistent": true
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "*://*/*",
+    "file:///*"
+  ],
+  "browser_action": {
+    "default_icon": "icons/icon19_on.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "src/content/csCommunicator.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "css": [
+        "src/content/inject.css"
+      ]
+    },
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "src/content/content.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "js/jquery/jquery.min.js",
+    "js/jquery/jquery.min.map",
+    "src/content/xmlhttprequest_override.js",
+    "src/content/inject.js"
+  ]
+}
